@@ -648,7 +648,7 @@ padding-bottom: 15px;
     background-color: transparent;
 border: 0;
 width: 100%;
-border-bottom: revert;
+border-bottom: ridge;
 background-position-x: right;
 background-image: url('img/arrow.png');
 background-repeat: no-repeat;

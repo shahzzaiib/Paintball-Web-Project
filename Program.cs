@@ -1,9 +1,24 @@
+
+
+
+
+using Microsoft.EntityFrameworkCore;
+using Paint_web_project.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+var connectionstring = builder.Configuration.GetConnectionString("dbConnection");
+builder.Services.AddDbContext<Data_Class>(options => options.UseSqlServer(connectionstring));
+
+
+
 var app = builder.Build();
+
+
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -17,6 +32,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+
 
 app.UseAuthorization();
 
